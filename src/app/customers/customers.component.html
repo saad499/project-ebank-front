@@ -1,0 +1,25 @@
+<h2 class="text-center danger">La liste des clients</h2>
+<div *ngIf="customers" class="m-5">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of customers">
+        <td>{{c.id}}</td>
+        <td>{{c.name}}</td>
+        <td>{{c.email}}</td>
+        <td>
+            <button (click)="detailCustomer(c)" class="btn btn-info m-1">Detail</button>
+            <button (click)="deleteCustomer(c)" class="btn btn-danger m-1">Supprimer</button>
+            <button (click)="updateCustomer(c)" class="btn btn-warning m-1">Modifier</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

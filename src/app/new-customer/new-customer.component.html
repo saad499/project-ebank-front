@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="card col-md-6 offset-3 mt-3" >
+        <div class="card-header text-center">Nouveau client</div>
+        <form [formGroup]="newCustomerFormGroup" (ngSubmit)="handleSaveCustomer()">
+            <div class="mb-3">
+                <label class="form-label">Name : </label>
+                <input type="text" class="form-control" id="" formControlName="name">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Email : </label>
+                <input type="email" class="form-control" id="" formControlName="email" >
+            </div>
+            <button type="submit" [disabled]="!newCustomerFormGroup.valid" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

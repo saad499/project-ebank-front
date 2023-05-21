@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="card col-md-6 offset-3 mt-3">
+        <div class="card-header text-center">Modifier client</div>
+    
+        <div *ngIf="customer">
+            <form [formGroup]="updateCustomerGroup" (ngSubmit)="updateCustomer()">
+                <div class="mb-3">
+                    <label class="form-label">Name : </label>
+                    <input type="text" class="form-control" formControlName="name" [(ngModel)]="customer.name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email : </label>
+                    <input type="email" class="form-control" formControlName="email" [(ngModel)]="customer.email">
+                </div>
+                <button [disabled]="!updateCustomerGroup.valid" class="btn btn-primary">Modifier</button>
+            </form>
+        </div>
+    </div>
+</div>
